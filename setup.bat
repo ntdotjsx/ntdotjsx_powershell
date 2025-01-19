@@ -14,5 +14,4 @@ echo Please wait...
 regedit /s "./core/ntdotjsx.reg"
 powershell -ExecutionPolicy Bypass -File "./core/setup.ps1"
 powershell -Command "& './core/profile.ps1'"
-
 pause

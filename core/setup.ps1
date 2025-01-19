@@ -1,4 +1,3 @@
-# ตรวจสอบว่า oh-my-posh ติดตั้งแล้วหรือยัง
 if (-not (Get-Command oh-my-posh -ErrorAction SilentlyContinue)) {
     Write-Host "oh-my-posh is not installed. Installing..."
     Install-Module -Name oh-my-posh -Force -Scope CurrentUser
