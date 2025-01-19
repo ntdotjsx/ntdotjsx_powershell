@@ -1,3 +1,4 @@
+$text = @'
 oh-my-posh init pwsh | Invoke-Expression
 & ([ScriptBlock]::Create((oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\peru.omp.json" --print) -join "`n"))
 Clear-Host
@@ -27,3 +28,6 @@ function vsc {
     Start-Process -FilePath $vscodePath -ArgumentList $path
     exit
 }
+'@
+
+$text | Add-Content -Path $PROFILE
