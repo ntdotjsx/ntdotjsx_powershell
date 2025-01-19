@@ -14,6 +14,30 @@ function task {
     Start-Process "taskmgr.exe"
     Write-Output "! Task Manager"
 }
+function reboot {
+    param (
+        [int]$in = 0
+    )
+
+    if ($in -gt 0) {
+        Write-Host "The system will restart in $in seconds..."
+        Start-Sleep -Seconds $in
+    }
+
+    Restart-Computer -Force
+}
+function gone {
+    param (
+        [int]$in = 0
+    )
+
+    if ($in -gt 0) {
+        Write-Host "The system will shutdown in $in seconds..."
+        Start-Sleep -Seconds $in
+    }
+
+    Shutdown-Computer -Force
+}
 function vsc {
     param (
         [string]$path = "."
