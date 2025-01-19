@@ -3,3 +3,5 @@
 ```jsx
 New-Item -Path $PROFILE -Type File -Force
 ```
+Step-1 Start setup.bat
+Step-2 Start fn.cmd

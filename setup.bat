@@ -13,7 +13,3 @@ echo Please wait...
 
 powershell -ExecutionPolicy Bypass -File "./core/setup.ps1"
 powershell -Command "& './core/profile.ps1'"
-
-@REM cd core
-@REM start ntdotjsx.reg
-pause
