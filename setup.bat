@@ -20,7 +20,7 @@ for %%d in (C D E) do (
     for /L %%i in (1,1,5) do (
         for %%e in (%emojis%) do (
             cls
-            echo %%e Searching... Please wait...
+            echo %%e Downloading ...
             timeout /t 1 >nul
         )
     )

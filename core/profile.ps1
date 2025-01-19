@@ -4,7 +4,7 @@ oh-my-posh init pwsh | Invoke-Expression
 Clear-Host
 
 function ntdotjsx {
-    Write-Output "I LOVE U"
+    Write-Output "I LOVE U ขอเย็ดทีดิ"
 }
 
 function chat {
