@@ -5,7 +5,7 @@ Step-2 Start font.cmd เลือก font nerd และ Copy settings.json ไ
 
 เปิด Task Manager
 ```jsx
-task
+tsk
 ```
 Clear History Command
 ```jsx
