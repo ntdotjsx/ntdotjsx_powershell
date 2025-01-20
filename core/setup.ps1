@@ -37,7 +37,7 @@ if (-not (Test-Path -Path $PROFILE)) {
 if (-not (Get-Command scoop -ErrorAction SilentlyContinue)) {
     Write-Host "Step 4: Scoop is not installed. Installing..."
     try {
-        Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+        Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
         Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
         Write-Host "Step 4: Scoop installed successfully."
     } catch {
