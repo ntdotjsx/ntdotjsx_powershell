@@ -4,15 +4,60 @@ $text = @'
 oh-my-posh init pwsh | Invoke-Expression
 & ([ScriptBlock]::Create((oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\peru.omp.json" --print) -join "`n"))
 Clear-Host
+function nthelp {
+    $commands = @(
+        @{ Name = "ntdotjsx"; Description = "Display 'I LOVE U' message."; Command = "ntdotjsx" }
+        @{ Name = "chat"; Description = "Open ChatGPT website in a new browser window."; Command = "chat" }
+        @{ Name = "tsk"; Description = "Open Task Manager and display a message."; Command = "tsk" }
+        @{ Name = "cast"; Description = "Clear the Recycle Bin and display a confirmation message."; Command = "cast" }
+        @{ Name = "reboot"; Description = "Restart the computer after a specified delay (in seconds)."; Command = "reboot" }
+        @{ Name = "gone"; Description = "Shut down the computer after a specified delay (in seconds)."; Command = "gone" }
+        @{ Name = "vsc"; Description = "Open Visual Studio Code in the specified path (default is current directory)."; Command = "vsc" }
+        @{ Name = "dw"; Description = "Download and install Python, Node.js, Lua, or Java."; Command = "dw" }
+        @{ Name = "history-cls"; Description = "Clear PowerShell command history and restart the PowerShell session."; Command = "history-cls" }
+    )
+    $menu = $commands | ForEach-Object { "$($_.Name) - $($_.Description)" }
+    Write-Host "Use Arrow Keys to navigate and press Enter to select:" -ForegroundColor Cyan
+    $selectedIndex = 0
+    while ($true) {
+        Clear-Host
+        for ($i = 0; $i -lt $menu.Count; $i++) {
+            if ($i -eq $selectedIndex) {
+                Write-Host " > $($menu[$i])" -ForegroundColor Green
+            } else {
+                Write-Host "   $($menu[$i])" -ForegroundColor White
+            }
+        }
+        $key = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown").VirtualKeyCode
+        switch ($key) {
+            38 {
+                $selectedIndex = ($selectedIndex - 1) % $menu.Count
+                if ($selectedIndex -lt 0) { $selectedIndex = $menu.Count - 1 }
+            }
+            40 { 
+                $selectedIndex = ($selectedIndex + 1) % $menu.Count
+            }
+            13 {
+                Clear-Host
+                Invoke-Expression $commands[$selectedIndex].Command
+                return
+            }
+        }
+    }
+}
 function ntdotjsx {
     Write-Output "I LOVE U"
 }
 function chat {
     start "https://chatgpt.com/"
 }
-function task {
+function tsk {
     Start-Process "taskmgr.exe"
     Write-Output "! Task Manager"
+}
+function cast {
+    Clear-RecycleBin
+    Write-Output "! Throwed away"
 }
 function reboot {
     param (
