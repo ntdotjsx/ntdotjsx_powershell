@@ -10,6 +10,10 @@ vsc
 ```jsx
 vsc {$path}
 ```
+เปิด chat gpt
+```jsx
+chat
+```
 Restart เครื่อง
 ```jsx
 reboot
