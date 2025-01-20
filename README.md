@@ -2,6 +2,7 @@
 Step-1 Start setup.bat <br/>
 Step-2 Start font.cmd เลือก font nerd และ Copy settings.json ไปใส่ใน setting terminal ได้เลย
 <hr/>
+
 เปิด Vscode
 ```jsx
 vsc
