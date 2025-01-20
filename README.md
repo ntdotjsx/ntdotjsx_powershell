@@ -16,6 +16,7 @@ Restart เครื่อง
 ```jsx
 reboot
 ```
+กำหนดเวลา
 ```jsx
 reboot -in 0
 ```
@@ -23,6 +24,7 @@ Shutdown เครื่อง
 ```jsx
 gone
 ```
+กำหนดเวลา
 ```jsx
 gone -in 0
 ```
