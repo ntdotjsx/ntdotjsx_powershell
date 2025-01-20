@@ -11,5 +11,5 @@ pause
 cls
 echo Please wait...
 
-powershell -ExecutionPolicy Bypass -File "{app}\core\setup.ps1"
-powershell -ExecutionPolicy Bypass -Command "& '{app}\core\profile.ps1'"
+powershell -ExecutionPolicy Bypass -File "./core/setup.ps1"
+powershell -Command "& './core/profile.ps1'"
