@@ -34,3 +34,15 @@ if (-not (Test-Path -Path $PROFILE)) {
 } else {
     Write-Host "Step 3: $PROFILE already exists."
 }
+if (-not (Get-Command scoop -ErrorAction SilentlyContinue)) {
+    Write-Host "Step 4: Scoop is not installed. Installing..."
+    try {
+        Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+        Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+        Write-Host "Step 4: Scoop installed successfully."
+    } catch {
+        Write-Host "Error: Failed to install Scoop." -ForegroundColor Red
+    }
+} else {
+    Write-Host "Step 4: Scoop is already installed."
+}
