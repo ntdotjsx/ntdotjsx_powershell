@@ -1,6 +1,6 @@
 # ntdotjsx_setting for developer pc
 Step-1 Start setup.bat <br/>
-Step-2 Start fn.cmd
+Step-2 Start font.cmd เลือก font nerd และ Copy settings.json ไปใส่ใน setting terminal ได้เลย
 
 ```jsx
 nthelp
