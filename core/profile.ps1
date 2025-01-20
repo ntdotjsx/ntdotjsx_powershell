@@ -12,7 +12,6 @@ function nthelp {
         @{ Name = "cast"; Description = "Clear the Recycle Bin and display a confirmation message."; Command = "cast" }
         @{ Name = "reboot"; Description = "Restart the computer after a specified delay (in seconds)."; Command = "reboot" }
         @{ Name = "gone"; Description = "Shut down the computer after a specified delay (in seconds)."; Command = "gone" }
-        @{ Name = "vsc"; Description = "Open Visual Studio Code in the specified path (default is current directory)."; Command = "vsc" }
         @{ Name = "dw"; Description = "Download and install Python, Node.js, Lua, or Java."; Command = "dw" }
         @{ Name = "history-cls"; Description = "Clear PowerShell command history and restart the PowerShell session."; Command = "history-cls" }
     )
@@ -59,6 +58,11 @@ function cast {
     Clear-RecycleBin
     Write-Output "! Throwed away"
 }
+function wrksp {
+    Set-Location "D:\Coding\"
+    Clear-Host
+    Write-Output "! Welcome Back ntdotjsx"
+}
 function reboot {
     param (
         [int]$in = 0
@@ -82,17 +86,6 @@ function gone {
     }
 
     shutdown /s /f /t 0
-}
-function vsc {
-    param (
-        [string]$path = "."
-    )
-    $vscodePath = "$env:USERPROFILE\AppData\Local\Programs\Microsoft VS Code\Code.exe"
-    if (!(Test-Path $vscodePath)) {
-        return
-    }
-    Start-Process -FilePath $vscodePath -ArgumentList $path
-    exit
 }
 function dw {
     $choice = Read-Host "Enter 'python' to install Python, 'node' to install Node.js, 'lua' to install Lua, or 'java' to install Java"

@@ -15,13 +15,6 @@ Clear History Command
 ```jsx
 history-cls
 ```
-เปิด Vscode ใน folder นั้นๆ
-```jsx
-vsc
-```
-```jsx
-vsc {$path}
-```
 เปิด chat gpt
 ```jsx
 chat
