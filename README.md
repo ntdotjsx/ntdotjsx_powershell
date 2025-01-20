@@ -2,7 +2,8 @@
 Step-1 Start setup.bat กด Enter <br/>
 Step-2 Start font.cmd เลือก font nerd และ Copy settings.json ไปใส่ใน setting terminal ได้เลย
 <hr/>
-Clear History Comand
+
+Clear History Command
 ```jsx
 history-cls
 ```
