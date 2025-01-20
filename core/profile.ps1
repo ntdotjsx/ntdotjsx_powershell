@@ -36,7 +36,7 @@ function gone {
         Start-Sleep -Seconds $in
     }
 
-    Shutdown-Computer -Force
+    shutdown /s /f /t 0
 }
 function vsc {
     param (
